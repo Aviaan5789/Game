@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Turbo Dodge - a 3D endless car dodging game" />
+    <title>Turbo Dodge — Endless Car Runner</title>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game-canvas"></canvas>
+
+      <div id="hud">
+        <div class="hud-top">
+          <div class="hud-pill" id="score-pill">
+            <span class="hud-label">SCORE</span>
+            <span class="hud-value" id="score-value">0</span>
+          </div>
+          <div class="hud-pill" id="level-pill">
+            <span class="hud-label">LEVEL</span>
+            <span class="hud-value" id="level-value">1</span>
+          </div>
+          <div class="hud-pill" id="best-pill">
+            <span class="hud-label">BEST</span>
+            <span class="hud-value" id="best-value">0</span>
+          </div>
+        </div>
+        <div class="hud-progress-wrap" id="progress-wrap">
+          <div class="hud-progress-label">
+            <span id="progress-text">0 / 300 to next level</span>
+          </div>
+          <div class="hud-progress-track">
+            <div class="hud-progress-fill" id="progress-fill"></div>
+          </div>
+        </div>
+        <div class="hud-speed" id="speed-readout">0 <span>km/h</span></div>
+      </div>
+
+      <div class="touch-controls" id="touch-controls">
+        <button class="touch-btn" id="btn-left" aria-label="Move left">&#8592;</button>
+        <button class="touch-btn" id="btn-right" aria-label="Move right">&#8594;</button>
+      </div>
+
+      <!-- Start Screen -->
+      <div class="overlay" id="start-screen">
+        <div class="panel">
+          <h1 class="title">TURBO<span>DODGE</span></h1>
+          <p class="subtitle">Endless 3D lane-dodging. Survive, score, level up.</p>
+
+          <div class="car-select" id="car-select"></div>
+
+          <div class="stat-row">
+            <div class="stat-box">
+              <div class="stat-label">Level</div>
+              <div class="stat-num" id="menu-level">1</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Progress</div>
+              <div class="stat-num" id="menu-progress">0 / 300</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Best Score</div>
+              <div class="stat-num" id="menu-best">0</div>
+            </div>
+          </div>
+
+          <button class="btn primary" id="start-btn">START ENGINE</button>
+          <div class="controls-hint">
+            <b>Desktop:</b> &#8592; &#8594; / A D to switch lanes &nbsp;&middot;&nbsp; <b>Mobile:</b> swipe or tap
+          </div>
+        </div>
+      </div>
+
+      <!-- Game Over Screen -->
+      <div class="overlay hidden" id="gameover-screen">
+        <div class="panel">
+          <h1 class="title crash">CRASHED!</h1>
+          <div class="score-summary">
+            <div class="score-big" id="final-score">0</div>
+            <div class="score-caption">points this run</div>
+          </div>
+
+          <div id="levelup-banner" class="levelup-banner hidden">
+            <span class="levelup-icon">&#9733;</span>
+            <span id="levelup-text">LEVEL UP!</span>
+          </div>
+          <div id="unlock-banner" class="unlock-banner hidden">
+            New car unlocked: <span id="unlock-car-name"></span>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-box">
+              <div class="stat-label">Level</div>
+              <div class="stat-num" id="go-level">1</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Progress</div>
+              <div class="stat-num" id="go-progress">0 / 300</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Best Score</div>
+              <div class="stat-num" id="go-best">0</div>
+            </div>
+          </div>
+
+          <button class="btn primary" id="retry-btn">DRIVE AGAIN</button>
+          <button class="btn secondary" id="menu-btn">MAIN MENU</button>
+        </div>
+      </div>
+
+      <!-- pause / countdown -->
+      <div class="countdown hidden" id="countdown"></div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
