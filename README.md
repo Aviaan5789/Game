@@ -1,5 +1,7 @@
 # Turbo Dodge
 
+**Play now: https://aviaan5789.github.io/Game/**
+
 A fully 3D endless car-dodging game built with [Three.js](https://threejs.org/) and [Vite](https://vitejs.dev/). Weave a car across three lanes of oncoming traffic, tyre stacks, and barriers, chase a constantly-ticking score, and level up to unlock new car colors.
 
 ## Gameplay
