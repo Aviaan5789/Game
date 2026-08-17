@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, claude/3d-endless-car-game-mqdwy2, claude/penalty-king-game-i3nctg]
   workflow_dispatch:
 
 permissions:
